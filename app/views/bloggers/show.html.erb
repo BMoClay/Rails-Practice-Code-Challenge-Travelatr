@@ -1,9 +1,8 @@
 <h3> @blogger.name </h3><br>
 
-<% @blogger.each do |b| %>
-  <ul>Age<%= b.age %><br>
-    <!-- Total Likes<%= b.likes %><br> -->
-      <%= b.bio %><br>
-    <!-- <%= link_to b.featured_post, destination_path(likes_params) %><br> -->
-  </ul>
-    <% end %>
+
+  <p>Age<%= @blogger.age %></p><br>
+ 
+    <p><%= @blogger.bio %></p><br>
+   
+  
