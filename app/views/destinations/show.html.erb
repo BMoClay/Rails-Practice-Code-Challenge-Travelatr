@@ -1,0 +1,8 @@
+<h3> @destination.name </h3><br>
+
+<% @posts.destinations.each do |b| %>
+  <ul>Most Recent Posts<%= b.title %><br>
+    <!-- Featured Post <%= b.likes %><br> -->
+    <!-- Average Age of Bloggers who visited <%= b.average_age %><br> -->
+  </ul>
+    <% end %>

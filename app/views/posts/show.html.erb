@@ -1,0 +1,11 @@
+<h3> @post.title </h3><br>
+
+<% @post.each do |b| %>
+  <ul><%= b.content %><br>
+    <!--<% b.likes_button %> -->
+    <!-- Likes<%= b.likes %><br> -->
+    <!-- <%= link_to b.blogger, blogger_path(params[:blogger_id]) %><br> -->
+    <!-- <%= link_to b.destination, destination_path(params[:destination_id]) %><br> -->
+  </ul>
+  <%= link_to 'edit', post_path(params[:id])%>
+    <% end %>

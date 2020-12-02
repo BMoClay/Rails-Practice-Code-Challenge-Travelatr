@@ -1,0 +1,21 @@
+<h3> Create a New Blogger </h3><br>
+
+<ul>
+    <% if @blogger.flash[:errors] %>
+        <%= flash[:errors].each do |error| %>
+            <%= error.message %><br>
+        <% end %>
+    </ul>
+<% end %>
+
+
+<% form_for @blogger do |f| %>
+  <ul><%= f.label :name %><br>
+      <%= f.text_field :name %><br>
+      <%= f.label :age %><br>
+      <%= f.number_field :age %><br>
+      <%= f.label :bio %><br>
+      <%= f.text_area :bio %><br>
+      <%= f.submit %>
+  </ul>
+    <% end %>

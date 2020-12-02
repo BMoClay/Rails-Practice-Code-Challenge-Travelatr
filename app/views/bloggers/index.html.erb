@@ -1,0 +1,6 @@
+<h3>Bloggers</h3><br>
+
+<% @bloggers.each do |b| %>
+  <ul><%= link_to b.name, blogger_path(:blogger_id) %><br>
+  </ul>
+    <% end %>
