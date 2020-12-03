@@ -6,6 +6,7 @@ class BloggersController < ApplicationController
 
     def show
         @blogger = Blogger.find(params[:id])
+        @the_post = @blogger.featured_post
     end
 
     def new
@@ -14,11 +15,13 @@ class BloggersController < ApplicationController
 
     def create
         blogger = Blogger.create(blogger_params)
+
         if blogger.valid?
-            redirect_to bloggers_path(blogger)
+            redirect_to bloggers_path
         else
             flash[:errors] = blogger.errors.full_messages
             redirect_to new_blogger_path
+            #render :new
         end
     end
 

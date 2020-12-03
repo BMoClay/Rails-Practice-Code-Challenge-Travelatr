@@ -1,6 +1,4 @@
-<h3>posts</h3><br>
-
+<p><h3>posts</h3><p>
 <% @posts.each do |b| %>
-  <ul><%= link_to b.title, post_path(post) %><br>
-  </ul>
-    <% end %>
+  <%= link_to b.title, post_path(b) %><br>
+<% end %>

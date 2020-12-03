@@ -1,8 +1,24 @@
-<h3> @destination.name </h3><br>
-
-<% @posts.destinations.each do |b| %>
-  <ul>Most Recent Posts<%= b.title %><br>
-    <!-- Featured Post <%= b.likes %><br> -->
-    <!-- Average Age of Bloggers who visited <%= b.average_age %><br> -->
-  </ul>
+<h3><%= @destination.name %></h3>
+<%= @destination.country %>
+  <p>Most Recent Posts</p>
+  <%if @most_recent_5_posts == nil%>
+  <%="There are no posts yet actually"%>
+  <%else%>
+  <% @destination.most_recent_N_posts(5).each{|post| %>
+    <p><%= link_to post.title, post_path(post) %></p>
+    <%}%>
     <% end %>
+
+<p> Featured Post </p>
+  <% if @most_featured_post == nil%>
+    <%="There aren't any posts yet for this place"%>
+  <% else %>
+    <%= link_to @most_featured_post.destination.name, post_path(@most_featured_post)%>
+  <% end %>
+
+<p>Average Age of Bloggers</p>
+  <%if @average_age == nil%>
+    <%"No posts yet so theres not anyone's ages to average out"%>
+  <% else %>
+    <%= @average_age %>
+  <% end %>

@@ -1,11 +1,12 @@
-<h3> @post.title </h3><br>
-
-<% @post.each do |b| %>
-  <ul><%= b.content %><br>
-    <!--<% b.likes_button %> -->
-    <!-- Likes<%= b.likes %><br> -->
-    <!-- <%= link_to b.blogger, blogger_path(params[:blogger_id]) %><br> -->
-    <!-- <%= link_to b.destination, destination_path(params[:destination_id]) %><br> -->
-  </ul>
-  <%= link_to 'edit', post_path(params[:id])%>
-    <% end %>
+<p><strong><%= @post.title %></strong></p>
+    <p><%= @post.content %></p><br>
+<button><%= link_to "Like", like_post_path(@post) %></button>
+<br>
+<h4> likes </h4><%= @post.likes %><br>
+<br>
+<p>Blogger</p>
+<p><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+<p>Destination</p>
+<p><%= link_to @post.destination.name, destination_path(@post.destination) %></p><br>
+<br>
+<%= link_to "edit", edit_post_path(@post)%>
